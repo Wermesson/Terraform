@@ -6,7 +6,7 @@ resource "azurerm_resource_group" "resource_group" {
 }
 
 resource "azurerm_storage_account" "storage_account" {
-  name                     = ""
+  name                     = var.storage_account_name
   resource_group_name      = azurerm_resource_group.resource_group.name
   location                 = var.location
   account_tier             = var.account_tier
@@ -16,6 +16,6 @@ resource "azurerm_storage_account" "storage_account" {
 }
 
 resource "azurerm_storage_container" "container" {
-  name                 = ""
+  name                 = var.container_name
   storage_account_name = azurerm_storage_account.storage_account.name
 }
