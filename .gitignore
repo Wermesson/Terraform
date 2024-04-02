@@ -30,4 +30,4 @@ terraform.rc
 
 # keys
 aws-key
-aws-key.public
+aws-key.pub
