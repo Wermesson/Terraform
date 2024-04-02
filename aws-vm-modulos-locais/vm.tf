@@ -4,6 +4,7 @@ resource "aws_key_pair" "key" {
 }
 
 resource "aws_instance" "vm" {
+  count                       = 2
   ami                         = "ami-080e1f13689e07408"
   instance_type               = "t2.micro"
   key_name                    = aws_key_pair.key.key_name
@@ -12,7 +13,7 @@ resource "aws_instance" "vm" {
   associate_public_ip_address = true
 
   tags = {
-    Name = "vm-${var.environment}"
+    Name = "vm-${var.environment}-${count.index}"
   }
 
 }
