@@ -29,5 +29,4 @@ override.tf.json
 terraform.rc
 
 # keys
-aws-key
-aws-key.pub
+*id_rsa*
